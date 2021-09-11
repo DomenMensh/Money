@@ -6,7 +6,7 @@ namespace _04._09._21_Классы_и_перегрузка
     {
         static void Main(string[] args)
         {
-            Money m = new Money();
+           // Money m = new Money();
             while (true)
             {                
                 Console.WriteLine("Введите копейки для добавления");
@@ -14,13 +14,21 @@ namespace _04._09._21_Классы_и_перегрузка
                 int n;
                 if (int.TryParse(buf, out n))
                 {
-                    m.AddKopeks(n);
+                    Money m = Add(n);
+                    //m.AddKopeks(n);
                     Console.WriteLine(m.Print());
                 } else
                 {
                     Console.WriteLine("Ошибка ввода данных");
                 }
             }
+        }
+
+        public static Money Add(int k)
+        {
+            Money m = new Money();
+            m.AddKopeks(k);
+            return m;
         }
     }
 }

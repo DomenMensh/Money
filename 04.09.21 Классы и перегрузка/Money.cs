@@ -35,6 +35,13 @@ namespace _04._09._21_Классы_и_перегрузка
             }
         }
 
+        public static int Count;
+
+        public Money()
+        {
+            Count++;
+        }
+
         public void AddKopeks(int k)
         {
             int summa = kopeks + k;
@@ -50,9 +57,11 @@ namespace _04._09._21_Классы_и_перегрузка
             }
         }
 
+
+
         public string Print()
         {
-            return (rubles > 0 ? rubles + " рублей " : string.Empty) + (kopeks > 0 ? kopeks + " копеек" : string.Empty);
+            return (rubles > 0 ? rubles + " рублей " : string.Empty) + (kopeks > 0 ? kopeks + " копеек" : string.Empty) + ("(кол-во созданных экземпляров: " + Count);
         }
 
     }
